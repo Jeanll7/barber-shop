@@ -1,10 +1,8 @@
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-blue-500 px-4 py-4 text-base text-white">
       <h1>Barbearia</h1>
     </div>
-  );
+  )
 }
-
