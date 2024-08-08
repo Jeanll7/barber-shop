@@ -12,6 +12,11 @@ import { db } from "./_lib/prisma "
 export default async function Home() {
   // chamar banco de dados
   const barbershops = await db.barbershop.findMany({})
+  const populaBarberShops = await db.barbershop.findMany({
+    orderBy: {
+      name: "desc",
+    },
+  })
   // console.log({ barbershops })
   return (
     <div>
@@ -31,6 +36,40 @@ export default async function Home() {
             <SearchIcon />
           </Button>
         </div>
+
+        {/* BUSCA RAPIDA */}
+        <div className="mt-6 flex items-center gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+          <Button className="gap-2" variant="secondary">
+            <Image src="/cabelo.svg" width={16} height={16} alt="Cabelo" />
+            Cabelo
+          </Button>
+
+          <Button className="gap-2" variant="secondary">
+            <Image src="/barba.svg" width={16} height={16} alt="Cabelo" />
+            Barba
+          </Button>
+
+          <Button className="gap-2" variant="secondary">
+            <Image src="/acabamento.svg" width={16} height={16} alt="Cabelo" />
+            Acabamneto
+          </Button>
+
+          <Button className="gap-2" variant="secondary">
+            <Image src="/sobrancelha.svg" width={16} height={16} alt="Cabelo" />
+            Sobrancelha
+          </Button>
+
+          <Button className="gap-2" variant="secondary">
+            <Image src="/massagem.svg" width={16} height={16} alt="Cabelo" />
+            Massagem
+          </Button>
+
+          <Button className="gap-2" variant="secondary">
+            <Image src="/hidratacao.svg" width={16} height={16} alt="Cabelo" />
+            Hidratação
+          </Button>
+        </div>
+        {/* BUSCA RAPIDA */}
 
         {/* IMAGEM */}
         <div className="relative mt-6 h-[150px] w-full">
@@ -80,7 +119,26 @@ export default async function Home() {
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
         </div>
+
+        <h2 className="mb-3 mt-6 text-sm font-semibold uppercase text-gray-400">
+          Populares
+        </h2>
+        <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+          {populaBarberShops.map((barbershop) => (
+            <BarbershopItem key={barbershop.id} barbershop={barbershop} />
+          ))}
+        </div>
       </div>
+
+      <footer>
+        <Card className="mt-8">
+          <CardContent className="px-5 py-6">
+            <p className="text-sm text-gray-400">
+              © 2024 Copyrigght Barber Shop
+            </p>
+          </CardContent>
+        </Card>
+      </footer>
     </div>
   )
 }
