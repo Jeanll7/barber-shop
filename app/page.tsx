@@ -1,12 +1,13 @@
 import Header from "./_components/header"
-import { Button } from "./_components/ui/button"
-import Image from "next/image"
-import { Card, CardContent } from "./_components/ui/card"
 import BarbershopItem from "./_components/barbershop-item"
-import { db } from "./_lib/prisma "
-import { quickSerachOptions } from "./_constants/search"
+import { db } from "./_lib/prisma"
+import Image from "next/image"
 import BookingItem from "./_components/booking-item"
 import SearchBar from "./_components/search-bar"
+import Footer from "./_components/footer"
+import Banner from "./_components/banner"
+import { quickSearchOptions } from "./_constants/search"
+import { Button } from "./_components/ui/button"
 
 export default async function Home() {
   // chamar banco de dados
@@ -29,7 +30,7 @@ export default async function Home() {
 
         {/* BUSCA RAPIDA */}
         <div className="mt-6 flex items-center gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
-          {quickSerachOptions.map((option) => (
+          {quickSearchOptions.map((option) => (
             <Button className="gap-2" variant="secondary" key={option.title}>
               <Image
                 src={option.imageUrl}
@@ -41,21 +42,14 @@ export default async function Home() {
             </Button>
           ))}
         </div>
-        {/* BUSCA RAPIDA */}
 
         {/* IMAGEM */}
-        <div className="relative mt-6 h-[150px] w-full">
-          <Image
-            alt="Agende nos melhores barbeiros"
-            src="/banner-01.png"
-            fill
-            className="rounded-xl object-cover"
-          />
-        </div>
+        <Banner src="/banner-01.png" alt="Agende nos melhores barbeiros" />
 
         {/* AGENDAMENTOS */}
         <BookingItem />
 
+        {/* RECOMENDADOS */}
         <h2 className="mb-3 mt-6 text-sm font-semibold uppercase text-gray-400">
           Recomendados
         </h2>
@@ -65,6 +59,7 @@ export default async function Home() {
           ))}
         </div>
 
+        {/* POPULARES */}
         <h2 className="mb-3 mt-6 text-sm font-semibold uppercase text-gray-400">
           Populares
         </h2>
@@ -75,15 +70,8 @@ export default async function Home() {
         </div>
       </div>
 
-      <footer>
-        <Card className="mt-8 rounded-none">
-          <CardContent className="px-5 py-6">
-            <p className="text-sm text-gray-400">
-              © 2024 Copyrigght Barber Shop
-            </p>
-          </CardContent>
-        </Card>
-      </footer>
+      {/* FOOTER */}
+      <Footer />
     </div>
   )
 }
