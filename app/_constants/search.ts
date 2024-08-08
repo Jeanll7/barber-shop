@@ -1,0 +1,31 @@
+interface QuickSerachOption {
+  imageUrl: string
+  title: string
+}
+
+export const quickSerachOptions: QuickSerachOption[] = [
+  {
+    imageUrl: "/cabelo.svg",
+    title: "Cabelo",
+  },
+  {
+    imageUrl: "/barba.svg",
+    title: "Barba",
+  },
+  {
+    imageUrl: "/acabamento.svg",
+    title: "Acabamento",
+  },
+  {
+    imageUrl: "/sobrancelha.svg",
+    title: "Sobracelha",
+  },
+  {
+    imageUrl: "/massagem.svg",
+    title: "Massagem",
+  },
+  {
+    imageUrl: "/hidratacao.svg",
+    title: "Hidratação",
+  },
+]
