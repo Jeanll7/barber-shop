@@ -21,6 +21,7 @@ const BookingItem = () => {
                 <AvatarImage
                   src="https://utfs.io/f/45331760-899c-4b4b-910e-e00babb6ed81-16q.png"
                   alt="avatar"
+                  className="rounded-full" // resolver
                 />
               </Avatar>
               <p className="text-sm">Vintage Barber</p>
