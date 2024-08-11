@@ -13,6 +13,10 @@ function Header() {
           width={120}
           className="h-auto w-auto object-contain"
         />
+        {/* <div className="flex items-center gap-1 text-xl font-bold uppercase">
+          <Image src="./cabelo.svg" width={20} height={20} alt="" />
+          <span className="text-primary">Vintage</span>
+        </div> */}
 
         <SidebarSheet />
       </CardContent>
