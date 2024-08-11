@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Card, CardContent } from "./ui/card"
-import SidebarButton from "./sidebar-button"
+import SidebarSheet from "./sidebar-sheet"
 
 function Header() {
   return (
@@ -14,7 +14,7 @@ function Header() {
           className="h-auto w-auto object-contain"
         />
 
-        <SidebarButton />
+        <SidebarSheet />
       </CardContent>
     </Card>
   )

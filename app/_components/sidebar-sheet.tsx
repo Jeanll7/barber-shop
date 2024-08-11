@@ -13,7 +13,7 @@ import { quickSearchOptions } from "../_constants/search"
 import { Avatar, AvatarImage } from "./ui/avatar"
 import Link from "next/link"
 
-const SidebarButton = () => {
+const SidebarSheet = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -81,4 +81,4 @@ const SidebarButton = () => {
   )
 }
 
-export default SidebarButton
+export default SidebarSheet
