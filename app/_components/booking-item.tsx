@@ -19,9 +19,9 @@ const BookingItem = () => {
             <div className="flex items-center gap-2">
               <Avatar className="h-6 w-6">
                 <AvatarImage
-                  src="https://utfs.io/f/45331760-899c-4b4b-910e-e00babb6ed81-16q.png"
+                  className="rounded-full"
+                  src="https://as2.ftcdn.net/v2/jpg/04/08/29/53/1000_F_408295383_RmfdT9eIulBQPXf21f1skfYwL9kabkwt.jpg"
                   alt="avatar"
-                  className="rounded-full" // resolver
                 />
               </Avatar>
               <p className="text-sm">Vintage Barber</p>

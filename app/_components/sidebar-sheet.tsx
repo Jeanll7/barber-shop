@@ -23,12 +23,17 @@ const SidebarSheet = () => {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle className="text-left">Menu</SheetTitle>
+          <SheetTitle id="sidebar-title" className="text-left">
+            Menu
+          </SheetTitle>
         </SheetHeader>
 
         <div className="flex items-center gap-3 border-b border-solid py-5">
           <Avatar>
-            <AvatarImage src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjAxfHxBdmF0YXJlc3xlbnwwfHwwfHx8Mg%3D%3D" />
+            <AvatarImage
+              src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjAxfHxBdmF0YXJlc3xlbnwwfHwwfHx8Mg%3D%3D"
+              alt="John Doe"
+            />
           </Avatar>
 
           <div>
@@ -41,13 +46,13 @@ const SidebarSheet = () => {
           <SheetClose asChild>
             <Button className="justify-start gap-2" variant="ghost" asChild>
               <Link href="/">
-                <HomeIcon size={18} />
+                <HomeIcon size={18} aria-hidden="true" />
                 Início
               </Link>
             </Button>
           </SheetClose>
           <Button className="justify-start gap-2" variant="ghost">
-            <CalendarIcon size={18} />
+            <CalendarIcon size={18} aria-hidden="true" />
             Agendamentos
           </Button>
         </div>
@@ -58,6 +63,7 @@ const SidebarSheet = () => {
               key={option.title}
               className="justify-start gap-2"
               variant="ghost"
+              aria-label={`Ir para ${option.title}`}
             >
               <Image
                 src={option.imageUrl}
@@ -71,7 +77,11 @@ const SidebarSheet = () => {
         </div>
 
         <div className="flex items-center py-5">
-          <Button variant="ghost" className="justify-start gap-2">
+          <Button
+            variant="ghost"
+            className="justify-start gap-2"
+            aria-label="Sair da conta"
+          >
             <LogOut size={18} />
             Sair da conta
           </Button>
