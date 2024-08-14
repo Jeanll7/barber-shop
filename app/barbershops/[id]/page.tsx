@@ -5,7 +5,6 @@ import { ChevronLeftIcon, MapPinIcon, MenuIcon, StarIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import Footer from "@/app/_components/footer"
 import PhoneItem from "@/app/_components/phone-item"
 
 interface BarberShopPageProps {
@@ -99,7 +98,6 @@ const BarberShopPage = async ({ params }: BarberShopPageProps) => {
           <PhoneItem key={phone} phone={phone} />
         ))}
       </div>
-      <Footer />
     </div>
   )
 }

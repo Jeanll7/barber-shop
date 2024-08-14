@@ -2,6 +2,7 @@
 
 import { SmartphoneIcon } from "lucide-react"
 import { Button } from "./ui/button"
+import { toast } from "sonner"
 
 interface PhoneItemProps {
   phone: string
@@ -10,7 +11,10 @@ interface PhoneItemProps {
 const PhoneItem = ({ phone }: PhoneItemProps) => {
   const handleCopyPhoneClick = (phone: string) => {
     navigator.clipboard.writeText(phone)
-    alert("Phone copiado com sucesso!")
+    toast.success("Telefone copiado com sucesso!", {
+      className: "bg-primary text-[#FFF]",
+      duration: 3000,
+    })
   }
 
   return (

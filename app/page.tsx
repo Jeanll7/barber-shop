@@ -4,7 +4,6 @@ import { db } from "./_lib/prisma"
 import Image from "next/image"
 import BookingItem from "./_components/booking-item"
 import SearchBar from "./_components/search-bar"
-import Footer from "./_components/footer"
 import Banner from "./_components/banner"
 import { quickSearchOptions } from "./_constants/search"
 import { Button } from "./_components/ui/button"
@@ -69,9 +68,6 @@ export default async function Home() {
           ))}
         </div>
       </div>
-
-      {/* FOOTER */}
-      <Footer />
     </div>
   )
 }
